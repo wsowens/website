@@ -2,16 +2,17 @@ var canvas;
 var ctx;
 var width, height;
 var board = [];
-var cell_size = 25;
+var CELL_SIZE = 30;
 var cell_probability = 0.2;
+var CELL_COLOR = "rgb(79, 101, 127)";
+var CLEAR_COLOR = "rgb(17,40,60)";
 
 window.addEventListener('load', function() {
     canvas = document.getElementById("board");
     ctx = canvas.getContext("2d");
     console.log(ctx);
     resizeWindow(undefined);
-    board = getNewBoard(width/cell_size, height/cell_size);
-    setInterval(doIteration,1000 / 30);
+    board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
 
 });
 
@@ -23,6 +24,7 @@ function resizeWindow(event) {
     ctx.filter = "blur(8px)";
     console.log("Done resizing");
     console.log(width, height);
+    board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
 }
 
 window.addEventListener('resize', resizeWindow);
@@ -77,18 +79,6 @@ function neighborCount(brd, r, c) {
     return count;
 }
 
-function doIteration() {
-    advanceBoard(board);
-    renderBoard();
-}
-var r0 = [false, false, false, false];
-var r1 = [false, false, false, false];
-var r2 = [false, true, false, false];
-var r3 = [false, true, false, false];
-var r4 = [false, true, false, false];
-var r5 = [false, false, false, false];
-var mybrd = [r0, r1, r2, r3, r4, r5];
-
 function generate_counts(brd) {
     let count_brd = []
     for (var i = 0; i < brd.length; i++) {
@@ -122,12 +112,22 @@ function advanceBoard(brd) {
 
 function renderBoard() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle="rgb(30,30,30)";
+    ctx.fillStyle = CELL_COLOR;
     for (var i = 0; i < board.length; i++) {
         for (var j =0; j < board[i].length; j++) {
             if (board[i][j]) {
-                ctx.fillRect(i*cell_size, j*cell_size, cell_size, cell_size);
+                ctx.fillRect(i*CELL_SIZE, j*CELL_SIZE, CELL_SIZE, CELL_SIZE);
             }
         }
     }
 }
+
+var last = null
+function renderBoard(last):
+    if (!start) start = timestamp;
+    var delta = timestamp - start;
+    if (progress < 2000) {
+        advanceBoard(brd);
+        renderBoard();
+        window.requestAnimationFrame(step);
+    }
