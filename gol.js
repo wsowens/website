@@ -1,36 +1,37 @@
 var canvas;
 var ctx;
-var width, height;
-var board = [];
+var main_board = null;
 var CELL_SIZE = 30;
 var cell_probability = 0.2;
 var CELL_COLOR = "rgb(79, 101, 127)";
 var CLEAR_COLOR = "rgb(17,40,60)";
+var ready = false;
 
+//create a renderer on page load
 window.addEventListener('load', function() {
     canvas = document.getElementById("board");
     ctx = canvas.getContext("2d");
     console.log(ctx);
     resizeWindow(undefined);
-    board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
+    main_board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
 
 });
 
+//if the window resizes, rerender
 function resizeWindow(event) {
-    width = window.innerWidth;
-    height = window.innerHeight;
+    var width = window.innerWidth, 
+        height = window.innerHeight;
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     ctx.filter = "blur(8px)";
     console.log("Done resizing");
     console.log(width, height);
-    board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
+    main_board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
 }
 
 window.addEventListener('resize', resizeWindow);
 
 function getNewBoard(h, w) {
-    console.log("Creating new board");
     let local_board = []
     for (var i = 0; i < h; i++) {
         var row = []
@@ -43,10 +44,8 @@ function getNewBoard(h, w) {
         }
         local_board.push(row);
     }
-    console.log(local_board);
     return local_board;
 }
-
 
 function neighborCount(brd, r, c) {
     let count = 0
@@ -93,41 +92,55 @@ function generate_counts(brd) {
 
 function advanceBoard(brd) {
     let count_brd = generate_counts(brd);
-    for (var i = 0; i < brd.length; i++) {
-        for (var j =0; j < brd[i].length; j++) {
+    let new_board = []
+    for (var i =0; i < brd.length; i++) {
+        new_board.push(brd[i].slice());
+    }
+    for (var i = 0; i < new_board.length; i++) {
+        for (var j =0; j < new_board[i].length; j++) {
             let count = count_brd[i][j];
             //console.log(count, i, j);
-            if (brd[i][j]) {
+            if (new_board[i][j]) {
                 if ( (count != 2) && (count !=3)) {
-                      brd[i][j] = false;
+                      new_board[i][j] = false;
                 }
             } else {
                 if (count == 3) {
-                    brd[i][j] = true;
+                    new_board[i][j] = true;
                 }
             }
         }
-    } 
+    }
+    return new_board
 }
 
-function renderBoard() {
+function renderBoard(brd) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = CELL_COLOR;
-    for (var i = 0; i < board.length; i++) {
-        for (var j =0; j < board[i].length; j++) {
-            if (board[i][j]) {
+    for (var i = 0; i < brd.length; i++) {
+        for (var j =0; j < brd[i].length; j++) {
+            if (brd[i][j]) {
                 ctx.fillRect(i*CELL_SIZE, j*CELL_SIZE, CELL_SIZE, CELL_SIZE);
             }
         }
     }
 }
 
-var last = null
-function renderBoard(last):
-    if (!start) start = timestamp;
-    var delta = timestamp - start;
-    if (progress < 2000) {
-        advanceBoard(brd);
-        renderBoard();
-        window.requestAnimationFrame(step);
+function doRenderIteration(timestamp) {
+    /* only render a frame when there is a board reddit */
+    if (ready) {
+        renderBoard(main_board);
+        ready = false;
     }
+    window.requestAnimationFrame(doRenderIteration);
+}
+
+function doBoardIteration() {
+    // update the main board
+    main_board = advanceBoard(main_board);
+    // mark the board as ready to render
+    ready = true;
+}
+
+window.setInterval(doBoardIteration, 100);
+window.requestAnimationFrame(doRenderIteration);
