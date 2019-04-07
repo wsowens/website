@@ -91,3 +91,26 @@ code {
     padding: 1vw;
     border-radius: 100%;
 }
+
+.gray-inset {
+    background-color: #222222;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+}
+
+.normal-inset {
+    background-color: #fdf6e3;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    display: flex;
+}
+
+.gray-background {
+    background-color: #222222;
+    color: white;
+}
