@@ -50,11 +50,6 @@ body {
     padding-left: 10px;
 }
 
-.bio {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 h1, h2, h3, h4, a{
     font-family: 'Roboto', sans-serif;
 }
@@ -71,18 +66,25 @@ code {
     background: lightgray;
 }
 
+
+.bio {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 #bio-text {
     width: 50%;
     min-width: 250px;
 }
 
 #avatar-box {
-    float: right;
-    display: flex;
     width: 50%;
     min-width: 250px;
+    display: flex;
+    justify-content: center;
 }
 
 #avatar {
+    padding: 1vw;
     border-radius: 100%;
 }
