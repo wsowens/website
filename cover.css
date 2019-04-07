@@ -8,11 +8,14 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: gray;
   /* set height to 90% of viewport */
   height: 90vh;
 }
 
+.wrapper {
+  background: #918e8ee0;
+  padding: 2vh;
+}
 
 h1, h2, a {
   font-family: 'Roboto', sans-serif;
@@ -56,5 +59,6 @@ div.button {
 }
 
 div.button:hover {
-	background-color:white;	
+	background-color:white;
+	
 }
