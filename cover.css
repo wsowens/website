@@ -13,7 +13,8 @@ main {
 }
 
 .wrapper {
-  background: #eee8d5e0;
+  background-color: #fdf6d3;
+  opacity: 0.875;
   padding: 2vh;
 }
 
@@ -60,9 +61,5 @@ div.button {
 }
 
 div.button:hover {
-  /*
-	background-color:rgba(17, 40, 60, 0.953);
-  color: #918e8e;
-  */
-	background-color:#eee8d5e0;
+	background-color:#eee8d5;
 }
