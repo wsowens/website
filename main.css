@@ -17,6 +17,7 @@ nav {
 }
 nav a {
     color: #93a1a1;
+    text-decoration: none;
 }
 
 nav a.current {
@@ -24,9 +25,8 @@ nav a.current {
     text-decoration: underline;
 }
 
-
 .nav-button {
-    margin-right: 10px;
+    margin-right: 1em;
 }
 
 .home-button {
