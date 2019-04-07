@@ -20,6 +20,7 @@ main {
 h1, h2, a {
   font-family: 'Roboto', sans-serif;
   text-align: center;
+  color: rgb(17,40,60);
 }
 
 h1 {
@@ -59,6 +60,9 @@ div.button {
 }
 
 div.button:hover {
-	background-color:white;
-	
+  /*
+	background-color:rgba(17, 40, 60, 0.953);
+  color: #918e8e;
+  */
+	background-color:#7a7777e0;
 }

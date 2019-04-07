@@ -4,7 +4,6 @@ var main_board = null;
 var CELL_SIZE = 30;
 var cell_probability = 0.2;
 var CELL_COLOR = "rgb(79, 101, 127)";
-var CLEAR_COLOR = "rgb(17,40,60)";
 var ready = false;
 
 //create a renderer on page load
