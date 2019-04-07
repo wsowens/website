@@ -70,14 +70,17 @@ code {
 .bio {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 #bio-text {
+    flex-grow: 2;
     width: 50%;
     min-width: 250px;
 }
 
 #avatar-box {
+    flex-grow: 2;
     width: 50%;
     min-width: 30%;
     display: flex;
