@@ -3,7 +3,7 @@ var ctx;
 var main_board = null;
 var CELL_SIZE = 50;
 var cell_probability = 0.2;
-var CELL_COLOR = "rgb(79, 101, 127)";
+var CELL_COLOR = "#586e75";
 var ready = false;
 
 //create a renderer on page load
