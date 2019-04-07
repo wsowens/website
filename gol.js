@@ -1,7 +1,7 @@
 var canvas;
 var ctx;
 var main_board = null;
-var CELL_SIZE = 30;
+var CELL_SIZE = 50;
 var cell_probability = 0.2;
 var CELL_COLOR = "rgb(79, 101, 127)";
 var ready = false;
