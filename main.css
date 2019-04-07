@@ -1,9 +1,53 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500|Roboto+Slab|Roboto:300i,400');
 
+nav {
+    margin: 0;
+    width: 100%;
+    font-size: 1.5em;
+    display: flex;
+    flex-wrap: wrap-reverse;
+    align-items: flex-end;
+    padding-top: 2vw;
+    padding-bottom: 2vw;
+}
+
+.nav-inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+nav a {
+    color: #93a1a1;
+}
+
+nav a.current {
+    color: #268bd2;
+    text-decoration: underline;
+}
+
+
+.nav-button {
+    margin-right: 10px;
+}
+
+.home-button {
+    color: #268bd2;
+    align-content: right;
+    flex-grow: 2;
+    text-align: right;
+}
+
+body {
+    background-color: #fdf6e3;
+    margin: 0;
+    margin-bottom: 8px;
+}
+
 .wrapper {
     margin: 0 auto;
     font-family: 'Roboto Slab', serif;
     max-width: 50em;
+    padding-right: 10px;
+    padding-left: 10px;
 }
 
 .bio {
