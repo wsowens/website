@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500|Roboto+Slab|Roboto:300i,400');
+
+.wrapper {
+    margin: 0 auto;
+    width: 50%;
+}
+
+h1, h2, h3, h4, a{
+    font-family: 'Roboto', sans-serif;
+}
+
+p {
+    font-family: 'Roboto Slab', serif;
+}
+
+code {
+    font-family: 'Roboto Mono', monospace;
+    background: lightgray
+}
+
+img {
+    border-radius: 50%;
+}
