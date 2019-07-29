@@ -60,7 +60,10 @@ nav a.current {
 h1, h2, h3, h4, a{
     font-family: 'Roboto', sans-serif;
 }
-
+main a {
+    color: #268bd2;
+    text-decoration: none;
+}
 p {
 	line-height:1.2;
     font-family: 'Roboto Slab', serif;
@@ -72,6 +75,8 @@ code {
     font-family: 'Roboto Mono', monospace;
     background: lightgray;
 }
+
+
 
 /* div stuff */
 .bio {
@@ -99,25 +104,20 @@ code {
     border-radius: 100%;
 }
 
-.gray-inset {
-    background-color: #222222;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 5%;
-    padding-bottom: 5%;
-    display: flex;
-}
 
 .normal-inset {
     background-color: #fdf6e3;
     padding-left: 2vw;
     padding-right: 2vw;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-top: 2%;
+    padding-bottom: 2%;
     display: flex;
 }
 
-.gray-background {
-    background-color: #222222;
-    color: white;
+.align-right {
+    float: right;
+}
+
+.align-left {
+    float: left;
 }
