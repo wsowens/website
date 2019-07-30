@@ -64,8 +64,16 @@ main a {
     color: #268bd2;
     text-decoration: none;
 }
+
 p {
 	line-height:1.2;
+    font-family: 'Roboto Slab', serif;
+    margin: 0;
+    font-size: 1.1em;
+}
+
+li {
+    line-height:1.2;
     font-family: 'Roboto Slab', serif;
     margin: 0;
     font-size: 1.1em;
