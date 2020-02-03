@@ -1,5 +1,10 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto+Mono:500|Roboto+Slab|Roboto:300i,400');
 
+/* fix page repositioning due to scrollbar */
+html { 
+    margin-left: calc(100vw - 100%);
+}
+
 body {
     background-color: #fdf6e3;
     margin: 0;
@@ -111,7 +116,6 @@ code {
     padding: 1vw;
     border-radius: 100%;
 }
-
 
 .normal-inset {
     background-color: #fdf6e3;
