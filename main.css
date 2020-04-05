@@ -65,7 +65,8 @@ nav a.current {
 h1, h2, h3, h4, a{
     font-family: 'Roboto', sans-serif;
 }
-main a {
+
+a {
     color: #268bd2;
     text-decoration: none;
 }
@@ -89,7 +90,16 @@ code {
     background: lightgray;
 }
 
+.caption {
+    font-style: italic;
+    text-align: center;
+    margin-left: 5%;
+    margin-right: 5%;
+}
 
+img {
+    width: 100%
+}
 
 /* div stuff */
 .bio {
@@ -133,4 +143,10 @@ code {
 
 .align-left {
     float: left;
+}
+
+img.icon {
+    display: inline;
+    max-height: 1em;
+    width: 2em;
 }
