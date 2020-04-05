@@ -115,6 +115,7 @@ code {
 #avatar {
     padding: 1vw;
     border-radius: 100%;
+    width: 100%;
 }
 
 .normal-inset {
