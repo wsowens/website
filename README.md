@@ -1,5 +1,4 @@
 # website
-Personal website that I maintain here: https://cise.ufl.edu/~wowens
+Personal website that I maintain here: https://ovvens.com
 
-I don't pretend to know how to do web dev. 😉
-
+I don't pretend to be a web dev. 😉
