@@ -1,34 +1,40 @@
+
+var golBox = null;
 var canvas;
 var ctx;
 var main_board = null;
-var CELL_SIZE = 50;
-var cell_probability = 0.2;
+var CELL_SIZE = 15;
+var cell_probability = 0.3;
 var CELL_COLOR = "#586e75";
 var ready = false;
 
 //create a renderer on page load
 window.addEventListener('load', function() {
+    if (document.getElementsByClassName("gol-box").length < 1) {
+        return;
+    }
+    golBox = document.getElementsByClassName("gol-box")[0];
     canvas = document.getElementById("board");
     ctx = canvas.getContext("2d");
-    console.log(ctx);
+    //console.log(ctx);
+    // run resizeWindow to check the width / height
     resizeWindow(undefined);
-    main_board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
 
+    // set up all the event listeners / timing
+    window.addEventListener('resize', resizeWindow);
+    window.setInterval(doBoardIteration, 100);
+    window.requestAnimationFrame(doRenderIteration);
 });
 
 //if the window resizes, rerender
 function resizeWindow(event) {
-    var width = window.innerWidth, 
-        height = window.innerHeight;
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-    ctx.filter = "blur(8px)";
-    console.log("Done resizing");
-    console.log(width, height);
-    main_board = getNewBoard(width/CELL_SIZE, height/CELL_SIZE);
+    canvas.width = golBox.clientWidth;
+    canvas.height = golBox.clientHeight;
+    //console.log("Done resizing");
+    //console.log(canvas.width, canvas.height);
+    main_board = getNewBoard(canvas.width/CELL_SIZE, canvas.height/CELL_SIZE);
 }
 
-window.addEventListener('resize', resizeWindow);
 
 function getNewBoard(h, w) {
     let local_board = []
@@ -117,7 +123,7 @@ function renderBoard(brd) {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.fillStyle = CELL_COLOR;
     for (var i = 0; i < brd.length; i++) {
-        for (var j =0; j < brd[i].length; j++) {
+        for (var j = 0; j < brd[i].length; j++) {
             if (brd[i][j]) {
                 ctx.fillRect(i*CELL_SIZE, j*CELL_SIZE, CELL_SIZE, CELL_SIZE);
             }
@@ -140,6 +146,3 @@ function doBoardIteration() {
     // mark the board as ready to render
     ready = true;
 }
-
-window.setInterval(doBoardIteration, 100);
-window.requestAnimationFrame(doRenderIteration);
