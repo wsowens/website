@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+    {% block head %}
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>William Owens (Biologist, Programmer, Engineer): Projects</title>
-		<link href="style.css" rel="stylesheet">
+		<title>William Owens: {{ article.title }}</title>
+        <link href="theme/css/style.css" rel="stylesheet">
+        {% if article.description %}
+        <meta name="description" content="{{article.description}}" />
+        {% endif %}
+        {% for tag in article.tags %}
+        <meta name="tags" content="{{tag}}" />
+        {% endfor %}
     </head>
+    {% endblock %}
     <body>
         <div class="wrapper">
             <nav>
@@ -14,13 +22,13 @@
                         <a href="/">About</a>
                     </div>
                     <div class="nav-button">
-                        <a class="current">Projects</a>
+                        <a href="https://ovvens.com/projects">Projects</a>
                     </div>
                     <div class="nav-button">
-                        <a href="research">Research</a>
+                        <a href="https://ovvens.com/research">Research</a>
                     </div>
                     <div class="nav-button">
-                        <a href="etc">Et cetera</a>
+                        <a href="etc" class="current">Et cetera</a>
                     </div>
                 </div>
                 <div class="home-button">
@@ -29,9 +37,11 @@
             </nav>
         </div>
         <div class="wrapper">
-            <h1>Projects</h1>
-            <p>Refer to my <a href="https://github.com/wsowens">GitHub profile</a> to see some of the software I've made.</p>
-            <p><i>(More detailed information coming soon.)</i></p>
+            <h2 class="blog-title">{{ article.title }}</h2>
+            <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+            <div class="content">
+                {{ article.content }}
+            </div>
         </div>
     </body>
 </html>

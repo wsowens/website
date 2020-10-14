@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>William Owens (Biologist, Programmer, Engineer): Other Stuff</title>
+		<link href="theme/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav>
+                <div class="nav-inner">
+                    <div class="nav-button">
+                        <a href="/">About</a>
+                    </div>
+                    <div class="nav-button">
+                        <a href="https://ovvens.com/projects">Projects</a>
+                    </div>
+                    <div class="nav-button">
+                        <a href="https://ovvens.com/research">Research</a>
+                    </div>
+                    <div class="nav-button">
+                        <a class="current">Et cetera</a>
+                    </div>
+                </div>
+                <div class="home-button">
+                    <a href="/" style="color: inherit;">William Owens</a>
+                </div>
+            </nav>
+        </div>
+        <div class="wrapper">
+            <h1>Et cetera 
+                <span style="font-family: 'Cormorant Garamond', serif; font-weight: 400; font-style: italic">(A blog.)</span>
+            </h1>
+            <h3>Most recent posts:</h3>
+            {% for article in articles_page.object_list %}
+                <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}" class="blog-link">
+                <div class="blog-entry">
+                    <h2>{{ article.title }}</h2>
+                    <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+                    {{ article.summary }}
+                </div>
+                </a>
+            {% endfor %}
+        </div>
+    </body>
+</html>
