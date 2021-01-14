@@ -58,7 +58,7 @@ You can train [a dog](https://www.youtube.com/watch?v=BWAK0J8Uhzk) to drive a ca
 It only requires that you're semi-conscious and have basic motor functionality.
 It's not *meaningful* and it leaves your brain idling, wasting the enthusiasm and **momentum** that you had when you stepped into the car.
 
-Some days at work can be like sitting in traffic.  
+Some days at work can be like sitting in traffic.
 If you're lucky like me, these days are few.
 Unfortunately, this isn't the case of most people.
 
@@ -80,11 +80,12 @@ But many times I've gone to the gym, finished a difficult project, or completed 
 Even something simple like cleaning my room can snap me out of a depressive slump.
 
 Weaving these experiences together, I'm entering 2021 with a new philosophy on motivation.
-- Every task drains some "energy".
-- "Momentum" makes life feel good.
-- Only meaningful, rewarding tasks increase your momentum.
-- Hedonistic or menial tasks decrease your momentum. 
-- Therefore, minimize hedonistic and menial tasks while maximizing rewarding tasks.
+
+> - Every task drains some "energy".
+> - "Momentum" makes life feel good.
+> - Only meaningful, rewarding tasks increase your momentum.
+> - Hedonistic or menial tasks decrease your momentum. 
+> - Therefore, minimize hedonistic and menial tasks while maximizing rewarding tasks.
 
 None of this is really novel, but I mostly want to highlight that simple, hedonistic tasks can rob you of your happiness just as much as menial, boring tasks can.
 As I learned over these past few months, it's all too easy to fall into a pattern of long work periods punctuated by dopamine binges.
