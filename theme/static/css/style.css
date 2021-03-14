@@ -89,6 +89,14 @@ p, ul {
 }
 
 
+li {
+    padding-left: 5%;
+    padding-right: 5%;
+    line-height:1.2;
+    font-size: 1.4em;
+    list-style-position: inside;
+}
+
 code {
     font-family: monospace;
     background: lightgray;

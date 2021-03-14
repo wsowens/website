@@ -1,6 +1,6 @@
 Title: Sunsetting the Swamp
 Author: William Owens
-Date: 2-14-2020 9:PM
+Date: 3-13-2020 9:00PM
 Summary: Or, what I learned from my first Python package.
 Slug: python-project
 
@@ -20,7 +20,7 @@ Somewhere along the way, I learned a new programming language just to write [soc
 In the final stages of my monomaniacal work on this project, I wrote a simple [context-dependent parser generator](https://github.com/ufosc/swampymud/blob/fe5bfa683e63370c3db14f6fa9b6c1bb088b3627/swampymud/util/parser.py).
 If you don't know what that means, just realize that there's no reason why a text-based RPG library with exactly 0 users should have a 1000 line parser generator.
 
-I bought a domain name [https://swampymud.net](https://swampymud.net) that I don't plan on renewing.
+I bought a domain name [swampymud.net](https://swampymud.net) that I don't plan on renewing.
 Oh, I made a pretty slick logo too:
 
 ![logo](https://raw.githubusercontent.com/ufosc/swampymud/2e28f9db1f0f4e1c4aafccdf7f58bf2a22b82366/images/sm_logo_animated.svg)
@@ -50,16 +50,16 @@ Again, the Python user *throws away* a major opportunity to make a better progra
 
 Out of everything, **my biggest regret is not quitting sooner**.
 My friend, OSC founder Matthew Booe, warned me about the [sunk-cost fallacy](https://en.wikipedia.org/wiki/Sunk_cost#Fallacy_effect).
-"Nonsense! This project will be done in next month."
+"Nonsense! This project will be done next month."
 As it turns out, "next month" isn't a month on the calendar, but rather a mirage that always hovers about 4-5 weeks ahead.
 
 A few months into the project, I saw [this video](https://youtu.be/3tO3h9APNbM).
 TL;DW: one of Tom Scott's first viral successes came from a low-effort, one-off project.
 The CEO of the company I work at has offered similar stories of his time in graduate school.
 He talks about how he helped create [OpenWetWare](https://openwetware.org/wiki/Main_Page), entirely as a side project.
-He recommends having 3 projects, taking about 60%, 30%, and 15% of your time.
-If the 15% project starts to become more interesting than the 25% project, then it should be bumped up.
-If a new project emerges that seems more interesting than anything your doing, then toss your least important project.
+He recommends having 3 projects, taking about 60%, 30%, and 10% of your time.
+If the 10% project starts to become more interesting than the 30% project, then it should be bumped up.
+If a new project emerges that seems more interesting than anything else, then toss the 10% project.
 
 Simply put, you can't reliably predict what will and won't succeed.
 Once a side project is no longer rewarding and the end isn't in sight, you're better off ditching it for something else.
@@ -97,20 +97,18 @@ The library you write will be more buggy, slower, and (most importantly) demand 
 
 In summary:
 
-- 1. Use the tools that make your project easier.
-- 2. Many small projects are better than one large project. Quit when it gets boring and move on.
-- 3. Ship early, ship often.
-- 4. Practical functionality beats theoretical beauty.
-- 5. Use existing work. Don't try to do it all yourself.
+1. Use the tools that make your project easier.
+2. Many small projects are better than one large project. Quit when it gets boring and move on.
+3. Ship early, ship often.
+4. Practical functionality beats theoretical beauty.
+5. Use existing work. Don't try to do it all yourself.
 
 Looking at these points now, if you trained a neural network on Hacker News comments and asked it for "software engineering advice", it would probably spit out something about like that list.
 Even if I should have known better, sometimes it takes getting burned to accept the common wisdom about playing with the fire.
 
 And while I learned this in a software-engineering context, these principles generalize to other fields like my current career as a scientist.
-For instance, #3 might be understood as "perform lots of experiments, and analyze the data quickly rather than trying to answer a dozen divergent questions in 1 crude experiment."
-#1 would be use the correct instrument, order the extra primers, or run the extra test instead of scraping by with inferior practices.
-#5 reminds us that we should always rely upon work that's already done, staying up to date 
-And finally, #4 reminds us that no matter how sophisticated your model or lofty your hypothesis, until you deliver *the data*, that bar graph or scatter plot, nobody will care.
+For instance, Principle #3 might be understood as "perform lots of experiments, and analyze the data quickly rather than trying to answer a dozen divergent questions in 1 crude experiment."
+Principle #5 reminds us that we should always rely upon work that's already done, staying up to date  And finally, Principle #4 reminds us that no matter how sophisticated your model or lofty your hypothesis, until you deliver *the data*, that bar graph or scatter plot, nobody will care.
 
 These reflections may sound self-critical, but to reiterate, I loved working on this project, even until the end.
 The lessons above will serve me well in science or wherever I wind up next.
