@@ -79,7 +79,7 @@ nav a.current {
 
 
 /* paragraphs should have nice spaces in between */
-p, ul {
+p, ul, ol {
     padding-left: 5%;
     padding-right: 5%;
     line-height:1.2;
@@ -88,14 +88,6 @@ p, ul {
     list-style-position: inside;
 }
 
-
-li {
-    padding-left: 5%;
-    padding-right: 5%;
-    line-height:1.2;
-    font-size: 1.4em;
-    list-style-position: inside;
-}
 
 code {
     font-family: monospace;

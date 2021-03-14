@@ -1,6 +1,6 @@
 Title: Sunsetting the Swamp
 Author: William Owens
-Date: 3-13-2020 9:00PM
+Date: 3-13-2021 9:00PM
 Summary: Or, what I learned from my first Python package.
 Slug: python-project
 
@@ -97,11 +97,11 @@ The library you write will be more buggy, slower, and (most importantly) demand 
 
 In summary:
 
-1. Use the tools that make your project easier.
-2. Many small projects are better than one large project. Quit when it gets boring and move on.
-3. Ship early, ship often.
-4. Practical functionality beats theoretical beauty.
-5. Use existing work. Don't try to do it all yourself.
+> 1. Use the tools that make your project easier.
+> 2. Many small projects are better than one large project. Quit when it gets boring and move on.
+> 3. Ship early, ship often.
+> 4. Practical functionality beats theoretical beauty.
+> 5. Use existing work. Don't try to do it all yourself.
 
 Looking at these points now, if you trained a neural network on Hacker News comments and asked it for "software engineering advice", it would probably spit out something about like that list.
 Even if I should have known better, sometimes it takes getting burned to accept the common wisdom about playing with the fire.
