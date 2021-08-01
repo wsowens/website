@@ -1,76 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>William Owens (Biologist, Programmer, Engineer)</title>
-        <link href="style.css" rel="stylesheet">
-		<script src="conway.js"></script>
-		<link href="conway.css" rel="stylesheet">
-    </head>
-    <body>
-        <div class="wrapper">
-            <nav>
-                <div class="nav-inner">
-                    <div class="nav-button">
-                        <a class="current">About</a>
-                    </div>
-                    <div class="nav-button">
-                        <a href="projects">Projects</a>
-                    </div>
-                    <div class="nav-button">
-                        <a href="research">Research</a>
-                    </div>
-                    <div class="nav-button">
-                        <a href="etc">Et cetera</a>
-                    </div>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>William Owens (Biologist, Programmer, Engineer)</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="conway.js"></script>
+    <link href="conway.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="nav-inner">
+                <div class="nav-button">
+                    <a class="current">About</a>
                 </div>
-                <div class="home-button">
-                        <a href="/" style="color: inherit;">William Owens</a>
+                <div class="nav-button">
+                    <a href="projects">Projects</a>
                 </div>
-            </nav>
-            <h1>About</h1>
-                <img id="avatar" src=images/cropped-resized-headshot.jpg alt="headshot">
-            <p>
-                Hey there! Welcome to my little piece of the internet.
-            </p>
-            <p>
-                I'm a recent graduate from the <b>University of Florida</b>.
-                There, I studied computer science, biology, and everything in between.
-                I received a B.S. in Computer Science (<i>cum laude</i>) and B.S. in Microbiology (<i>summa cum laude</i>).
-            </p>
-            <p>
-                I was honored to be named a <b>Goldwater Scholar</b> in 2019, an award given to those students show "the greatest potential" to become leaders in their field.
-                Out of a graduating class of roughly 9,000 UF students, I was one of 9 named a <b>Four-Year Outstanding Scholar</b>.
-            </p>
-            <p>
-                I'm now a Synthetic Biology Apprentice at <b>Octant</b>, helping to revolutionize the way we approach <a href="https://www.octant.bio/blog/2020/9/14-octants-multiplexing-superpowers">drug discovery</a>. 
-                As an SBA, I've been paired with top notch scientists (Octonauts) who teach me the latest synthetic biology and cell engineering techniques.
-                In the future, I aspire to get a Ph.D. in Biological Engineering and help unlock the untapped potential of the cell.
-            </p>
-            <div class="gol-box">
-                <canvas id="board"></canvas>
-                <div class="caption">Biology can help solve our most complex challenges.</div>
+                <div class="nav-button">
+                    <a href="research">Research</a>
+                </div>
+                <div class="nav-button">
+                    <a href="etc">Et cetera</a>
+                </div>
             </div>
-            <h2>Goals</h2>
-            <ul>
-                <li>Explore organisms & machines from a unified computational-biological perspective</li>
-                <li>Encourage more public engagement with science, mathematics, & philosophy</li>
-                <li>Leverage the power of biology to solve real world problems</li>
-            </ul>
-            <h2>Contact</h2>
-            <div class="contact">
-                <img class="icon" src="images/icons/email.svg"> 
-                <div>Email: <a href="mailto:will@ovvens.com">will@ovvens.com</a></div>
+            <div class="home-button">
+                <a href="/" style="color: inherit;">William Owens</a>
             </div>
-            <div class="contact">
-                <img class="icon" src="images/icons/matrix.svg"> 
-                <div>Matrix: @will:ovvens.com <a href="etc/matrix.html" style="font-style: italic;"> (Wait, what is Matrix?)</a></div>
-            </div>
-            <div class="contact">
-                <img class="icon" src="images/icons/twitter.svg">
-                <div>Twitter: <a href="https://twitter.com/willovvens">@willovvens</a></div>
-            </div>
+        </nav>
+        <h1>About</h1>
+        <img id="avatar" src=images/cropped-resized-headshot.jpg alt="headshot">
+        <p>
+            Hey there! Welcome to my little piece of the internet.
+        </p>
+        <p>
+            I'm a recent graduate from the <b>University of Florida</b>.
+            There, I studied computer science, biology, and everything in between.
+            I received a B.S. in Computer Science (<i>cum laude</i>) and B.S. in Microbiology (<i>summa cum laude</i>).
+        </p>
+        <p>
+            I was honored to be named a <b>Goldwater Scholar</b> in 2019, an award given to those students show "the
+            greatest potential" to become leaders in their field.
+            Out of a graduating class of roughly 9,000 UF students, I was one of 9 named a <b>Four-Year Outstanding
+                Scholar</b>.
+        </p>
+        <p>
+            I'm now a Synthetic Biology Apprentice at <b>Octant</b>, helping to revolutionize the way we approach <a
+                href="https://www.octant.bio/blog/2020/9/14-octants-multiplexing-superpowers">drug discovery</a>.
+            As an SBA, I've been paired with top notch scientists (Octonauts) who teach me the latest synthetic biology
+            and cell engineering techniques.
+            In the future, I aspire to get a Ph.D. in Biological Engineering and help unlock the untapped potential of
+            the cell.
+        </p>
+        <div class="gol-box">
+            <canvas id="board"></canvas>
+            <div class="caption">Biology can help solve our most complex challenges.</div>
         </div>
-    </body>
-</html>	
+        <h2>Goals</h2>
+        <ul>
+            <li>Explore organisms & machines from a unified computational-biological perspective</li>
+            <li>Encourage more public engagement with science, mathematics, & philosophy</li>
+            <li>Leverage the power of biology to solve real world problems</li>
+        </ul>
+        <h2>Contact</h2>
+        <div class="contact">
+            <img class="icon" src="images/icons/email.svg">
+            <div>Email: <a href="mailto:will@ovvens.com">will@ovvens.com</a></div>
+        </div>
+        <div class="contact">
+            <img class="icon" src="images/icons/matrix.svg">
+            <div>Matrix: @will:ovvens.com <a href="etc/matrix.html" style="font-style: italic;"> (Wait, what is
+                    Matrix?)</a></div>
+        </div>
+        <div class="contact">
+            <img class="icon" src="images/icons/twitter.svg">
+            <div>Twitter: <a href="https://twitter.com/willovvens">@willovvens</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
