@@ -1,47 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% block head %}
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>William Owens: {{ article.title }}</title>
-        <link href="theme/css/style.css" rel="stylesheet">
-        {% if article.description %}
-        <meta name="description" content="{{article.description}}" />
-        {% endif %}
-        {% for tag in article.tags %}
-        <meta name="tags" content="{{tag}}" />
-        {% endfor %}
-    </head>
-    {% endblock %}
-    <body>
-        <div class="wrapper">
-            <nav>
-                <div class="nav-inner">
-                    <div class="nav-button">
-                        <a href="/">About</a>
-                    </div>
-                    <div class="nav-button">
-                        <a href="https://ovvens.com/projects">Projects</a>
-                    </div>
-                    <div class="nav-button">
-                        <a href="https://ovvens.com/research">Research</a>
-                    </div>
-                    <div class="nav-button">
-                        <a href="{{ SITEURL }}" class="current">Et cetera</a>
-                    </div>
+{% block head %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>William Owens: {{ article.title }}</title>
+    <link href="theme/css/style.css" rel="stylesheet">
+    {% if article.description %}
+    <meta name="description" content="{{article.description}}" />
+    {% endif %}
+    {% for tag in article.tags %}
+    <meta name="tags" content="{{tag}}" />
+    {% endfor %}
+</head>
+{% endblock %}
+
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="nav-inner">
+                <div class="nav-button">
+                    <a href="/">About</a>
                 </div>
-                <div class="home-button">
-                    <a href="/" style="color: inherit;">William Owens</a>
+                <div class="nav-button">
+                    <a href="https://ovvens.com/projects">Projects</a>
                 </div>
-            </nav>
-        </div>
-        <div class="wrapper">
-            <h2 class="blog-title">{{ article.title }}</h2>
-            <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
-            <div class="content">
-                {{ article.content }}
+                <div class="nav-button">
+                    <a href="https://ovvens.com/research">Research</a>
+                </div>
+                <div class="nav-button">
+                    <a href="{{ SITEURL }}" class="current">Et cetera</a>
+                </div>
             </div>
+            <div class="home-button">
+                <a href="/" style="color: inherit;">William Owens</a>
+            </div>
+        </nav>
+    </div>
+    <div class="wrapper">
+        <div class="blog-heading">
+            <h1>{{ article.title }}</h1>
+            <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
         </div>
-    </body>
+        <div class="content">
+            {{ article.content }}
+        </div>
+    </div>
+</body>
+
 </html>

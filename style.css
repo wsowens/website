@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Lato:wght@400;700&display=swap');
 
-html { 
+html {
     /* fix page repositioning due to scrollbar */
     margin-left: calc(100vw - 100%);
     font-family: 'Cormorant Garamond', serif;
@@ -55,7 +55,10 @@ nav {
 }
 
 /* text styling */
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     padding: 0 5%;
     font-family: 'Lato', sans-serif;
 }
@@ -79,10 +82,12 @@ nav a.current {
 
 
 /* paragraphs should have nice spaces in between */
-p, ul, ol {
+p,
+ul,
+ol {
     padding-left: 5%;
     padding-right: 5%;
-    line-height:1.2;
+    line-height: 1.2;
     margin: 1em 0;
     font-size: 1.4em;
     list-style-position: inside;
@@ -178,8 +183,7 @@ div.sect-heading h3 {
     padding-bottom: 0.5em;
 }
 
-blockquote {
-}
+blockquote {}
 
 /* for the blog */
 a.blog-link {
@@ -224,4 +228,3 @@ div.blog-entry p {
 h2.blog-title {
     margin-bottom: 0;
 }
-

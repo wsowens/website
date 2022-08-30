@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
+# required for some blog posts:  pelican-plugins/simple-footnotes
+# pip install pelican-simple-footnotes
 
 AUTHOR = 'William Owens'
 SITENAME = 'Et cetera'
