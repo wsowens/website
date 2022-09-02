@@ -3,3 +3,5 @@ __pycache__/*
 # ignore the blog directory, this can always be remade with:
 # make clean && make
 etc/*
+
+.vscode/*
