@@ -189,6 +189,9 @@ table {
     font-size: 1.2em;
     margin: 1em 5%;
     border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
 }
 
 
@@ -248,7 +251,7 @@ div .highlight {
     padding-left: 5%;
     padding-right: 5%;
     margin: 1em 0;
-    font-size: 1.4em;
+    font-size: 1.25em;
 }
 
 /* simple footnotes */
@@ -268,6 +271,7 @@ Licensed under the BSD license, see LICENSE for details.
 */
 pre {
     line-height: 125%;
+    overflow-x: auto;
 }
 
 td.linenos .normal {
