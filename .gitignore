@@ -4,4 +4,7 @@ __pycache__/*
 # make clean && make
 etc/*
 
+# for installing pelican dependencies locally
+pelican_env/*
+
 .vscode/*
