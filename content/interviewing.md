@@ -107,7 +107,7 @@ If you get a prospective question, you can add some retrospective flair to your 
 For instance, if asked, "what would you want to work on if you joined this program?"
 Instead of just saying "cell signaling and cancer biology," you can say:
 
-> "Well, I think working on the CRISPR screen showed me just how much there is still to learn about cancer biology, and I would love to continue that work here with someone like Professor X. But, it's also given me an appreciation for the complexity of cell signaling, and I really enjoy the approaches that Professor Z your lab take to this problem."
+> "Well, I think working on the CRISPR screen showed me just how much there is still to learn about cancer biology, and I would love to continue that work here with someone like Professor X. But, it's also given me an appreciation for the complexity of cell signaling, and I really enjoy the approaches that Professor Z's lab and your lab take to this problem."
 
 This answer will stick in the interviewer's mind more and, again, give them more ideas to continue the conversation.
 
