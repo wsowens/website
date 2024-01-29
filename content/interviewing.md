@@ -1,9 +1,9 @@
 Title: How to interview for PhD programs (or anything)
 Date: 02-16-2023
-Summary: The worst thing you can do is act like an asshole. The second worst thing you can do is be forgettable. 
+Summary: The worst thing you can do is be an asshole. The second worst thing you can do is be forgettable. 
 Slug: interviewing
 
-**The worst thing you can do is act like an asshole. The second worst thing you can do is be forgettable.** 
+**The worst thing you can do is be an asshole. The second worst thing you can do is be forgettable.** 
 
 Interviewing is a lot like trying to sell a used car.
 It's inherently uncomfortable (at least for non-sociopaths) to sell something that you know has flaws and imperfections. 
@@ -17,7 +17,7 @@ And while most of us know what someone is looking for in a car (low mileage, no 
 I was very anxious before my first "real" interview at Octant.[ref]Prior to that interview, my father loaned me this dog-eared, oddly typeset book called ["Interviewing: It's Your Big Deal"](https://www.amazon.com/Interviewing-Its-Your-Big-Deal/dp/1425946747/).
 While aimed more at middle management and other white collar work, I suspect a portion of this post is inspired by ideas I read there several years ago. [/ref]
 Fortunately, this led to my first "real" job there, where I got to take part in several dozen interviews across all areas of the company: software engineers, synthetic organic chemists, office managers, and so on.
-From the other side of the table, I learned that an effective interview essentially wants to learn three basic things:
+From the other side of the table, I learned that an effective interviewer essentially wants to learn three basic things:
 
 - Big Question 1: Are you who you say you are on your resume or CV?
 - Big Question 2: Will you meaningfully contribute to the team hiring you?
@@ -48,7 +48,7 @@ or
 
 >"I haven't thought about that specifically, but I do know that combination therapies have similar issues in the clinic..." 
 
-You shouldn't assume that the interviewer has read your CV, but you also go beyond regurgitating your CV and provide a more rich picture of your work.
+You shouldn't assume that the interviewer has read your CV, but you _should_ go beyond regurgitating your CV and provide a more rich picture of your work.
 
 For instance, when an interviewer says, "tell me about your undergraduate research."
 The default answer might be:
@@ -87,7 +87,7 @@ This is a more effective than an abstract declaration, because it allows the int
 
 **For Big Question 3 (are you a cool person?), many people think that as long as you're not an asshole, you'll automatically land a spot.**
 But maybe you'll be unlucky, and the interviewer will meet someone else who is also not an asshole.
-In these cases, **the worst thing you can do is be forgettable**.
+In these cases, **the worst thing you can do is be forgettable**.[ref]While I'm thankful to many people who guided me through the graduate school application process, I have to specifically credit my mentor Gray R. Anderson for impressing this key idea upon me.[/ref]
 
 Before the interview, reread your notes on the interviewer's research.
 Listen to [some synthwave](https://www.youtube.com/watch?v=-B7-Vcdlld8).
@@ -116,8 +116,9 @@ The professors are usually doing this with good intentions, after all, _they wan
 This, however, is also treacherous territory to be in, **because if you sit through 50 minutes of a slide deck in silence, you will be very, very forgettable**.
 In these cases, it's completely fine to smile and follow along with 90% of their presentation.
 However, if more than 5 or 10 minutes pass you should (politely) interject and raise a question.
-Look for an opportunity to demonstrate that you understand what's being presented, ask about the implications of a figure or possible followup experiments.
-This may spark more conversation, and will show the professor that you can fit in this kind of intellectual environment.
+Look for an opportunity to demonstrate that you understand what's being presented.
+Ask about the implications of a figure or propose possible followup experiments.
+This can spark more conversation, and will show the professor that you can fit in this kind of intellectual environment.
 
 And as a final point, while your brain may be racing in an interview, **it's completely fine to pause to think about a question**.
 You can take 5, even 10 seconds to rifle through your mind for the right words or an appropriate anecdote to share.
