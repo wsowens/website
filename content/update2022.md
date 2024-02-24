@@ -2,7 +2,7 @@ Title: 2022 Update
 Author: William Owens
 Date: 9-3-2022
 Slug: update2022
-Summary: I'm blogging for real this time guys, I promise.
+Summary: What I've been up to. 
 
 Hi there!
 
