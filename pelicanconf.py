@@ -3,7 +3,7 @@
 # required for some blog posts:  pelican-plugins/simple-footnotes
 # pip install pelican-simple-footnotes
 
-AUTHOR = 'William Owens'
+AUTHOR = 'Will Owens'
 SITENAME = 'Et cetera'
 SITEURL = 'https://ovvens.com/etc'
 

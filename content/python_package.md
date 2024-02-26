@@ -1,5 +1,5 @@
 Title: Sunsetting the Swamp
-Author: William Owens
+Author: Will Owens
 Date: 3-13-2021 9:00PM
 Summary: Or, what I learned from my first Python package.
 Slug: python-project

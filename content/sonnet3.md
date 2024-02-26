@@ -1,5 +1,5 @@
 Title: Sonnet no. 3
-Author: William Owens
+Author: Will Owens
 Date: 12/3/21 11:30 PM
 Slug: sonnet3
 Summary: (2/14/2019)

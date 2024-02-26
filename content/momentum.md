@@ -1,5 +1,5 @@
 Title: Momentum, Not Energy
-Author: William Owens
+Author: Will Owens
 Date: 1-5-2021 8:15 AM
 Slug: momentum
 Summary: How I learned to defeat sloth with this one weird trick.

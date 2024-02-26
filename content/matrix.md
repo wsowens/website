@@ -1,5 +1,6 @@
 Title: Why you should use Matrix (not Discord!)
 Date: 04-05-2020
+Author: Will Owens
 Summary: A brief introduction to Matrix—email for the 21st century.
 Slug: matrix
 

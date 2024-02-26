@@ -1,5 +1,5 @@
 Title: First Post
-Author: William Owens
+Author: Will Owens
 Date: 10-14-2020 9:32PM
 Summary: I started a blog this week. Here's why.
 

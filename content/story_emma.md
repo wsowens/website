@@ -1,5 +1,5 @@
 Title: Emma wasn’t like other girls
-Author: William Owens
+Author: Will Owens
 Date: 8-26-2022
 Slug: emma-story
 Summary: Emma wasn’t like other girls

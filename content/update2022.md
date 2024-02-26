@@ -1,5 +1,5 @@
 Title: 2022 Update
-Author: William Owens
+Author: Will Owens
 Date: 9-3-2022
 Slug: update2022
 Summary: What I've been up to. 
