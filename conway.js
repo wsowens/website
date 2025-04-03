@@ -3,13 +3,13 @@ var golBox = null;
 var canvas;
 var ctx;
 var main_board = null;
-var CELL_SIZE = 15;
+var CELL_SIZE = 8;
 var cell_probability = 0.3;
 var CELL_COLOR = "#586e75";
 var ready = false;
 
 //create a renderer on page load
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
     if (document.getElementsByClassName("gol-box").length < 1) {
         return;
     }
@@ -32,7 +32,7 @@ function resizeWindow(event) {
     canvas.height = golBox.clientHeight;
     //console.log("Done resizing");
     //console.log(canvas.width, canvas.height);
-    main_board = getNewBoard(canvas.width/CELL_SIZE, canvas.height/CELL_SIZE);
+    main_board = getNewBoard(canvas.width / CELL_SIZE, canvas.height / CELL_SIZE);
 }
 
 
@@ -57,10 +57,8 @@ function neighborCount(brd, r, c) {
     if (brd[r][c]) {
         count = -1;
     }
-    for (var i = r-1; i <= r+1; i++)
-    {
-        for (var j = c-1; j <= c+1; j++)
-        {
+    for (var i = r - 1; i <= r + 1; i++) {
+        for (var j = c - 1; j <= c + 1; j++) {
             let cell_i = i;
             let cell_j = j;
             if (cell_i < 0) {
@@ -98,16 +96,16 @@ function generate_counts(brd) {
 function advanceBoard(brd) {
     let count_brd = generate_counts(brd);
     let new_board = []
-    for (var i =0; i < brd.length; i++) {
+    for (var i = 0; i < brd.length; i++) {
         new_board.push(brd[i].slice());
     }
     for (var i = 0; i < new_board.length; i++) {
-        for (var j =0; j < new_board[i].length; j++) {
+        for (var j = 0; j < new_board[i].length; j++) {
             let count = count_brd[i][j];
             //console.log(count, i, j);
             if (new_board[i][j]) {
-                if ( (count != 2) && (count !=3)) {
-                      new_board[i][j] = false;
+                if ((count != 2) && (count != 3)) {
+                    new_board[i][j] = false;
                 }
             } else {
                 if (count == 3) {
@@ -125,7 +123,7 @@ function renderBoard(brd) {
     for (var i = 0; i < brd.length; i++) {
         for (var j = 0; j < brd[i].length; j++) {
             if (brd[i][j]) {
-                ctx.fillRect(i*CELL_SIZE, j*CELL_SIZE, CELL_SIZE, CELL_SIZE);
+                ctx.fillRect(i * CELL_SIZE, j * CELL_SIZE, CELL_SIZE, CELL_SIZE);
             }
         }
     }

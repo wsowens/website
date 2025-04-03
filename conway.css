@@ -1,24 +1,25 @@
 /* for game of life styling */
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@1,300&display=swap');
+
 .gol-box {
     position: relative;
-    font-size: 30px;
+    font-size: 1.4em;
     font-family: 'Lato', 'sans-serif';
     font-weight: 100;
-    height: 330px;
+    height: 200px;
     border: solid #586e75 5px;
-    
+
 }
 
 .caption {
     background-color: #fdf6e3;
     border: solid #586e75 3px;
     color: #586e75;
-    padding: 0.5em 0em;
+    padding: 0.5em 0.5em;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
     margin: 0;
 }

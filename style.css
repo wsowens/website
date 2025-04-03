@@ -30,8 +30,8 @@ nav {
     display: flex;
     flex-wrap: wrap-reverse;
     align-items: flex-end;
-    padding: 1vw 0;
-    margin-bottom: 2vw;
+    padding: 1vh 0;
+    margin-bottom: 2vh;
     border-bottom: solid 3px #93a1a1;
 }
 
