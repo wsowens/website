@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Draggable & Resizable Canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+        body {
+            margin: 2rem;
+            font-family: sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            position: relative;
+        }
+
+        #canvasWrapper {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            border: 2px solid #333;
+            display: inline-block;
+            background: white;
+            user-select: none;
+        }
+
+        canvas {
+            display: block;
+            background: #f0f0f0;
+        }
+
+        .handle {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: #333;
+            z-index: 10;
+        }
+
+        .se {
+            bottom: -6px;
+            right: -6px;
+            cursor: se-resize;
+        }
+
+        .drag-handle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: rgba(0, 0, 0, 0.1);
+            cursor: move;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="canvasWrapper">
+        <div class="drag-handle" id="dragHandle"></div>
+        <canvas id="myCanvas" width="300" height="200"></canvas>
+        <div class="handle se" data-dir="se"></div>
+    </div>
+
+    <script>
+        const wrapper = document.getElementById('canvasWrapper');
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        const dragHandle = document.getElementById('dragHandle');
+        const resizeHandle = document.querySelector('.handle');
+
+        let isDragging = false;
+        let dragOffsetX = 0;
+        let dragOffsetY = 0;
+
+        let isResizing = false;
+        let startWidth = 0;
+        let startHeight = 0;
+        let startX = 0;
+        let startY = 0;
+
+        // Draw something
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#cce";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#000";
+            ctx.font = "16px sans-serif";
+            ctx.fillText(`Canvas: ${canvas.width} x ${canvas.height}`, 20, 30);
+        }
+
+        // Dragging
+        dragHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            const rect = wrapper.getBoundingClientRect();
+            dragOffsetX = e.clientX - rect.left;
+            dragOffsetY = e.clientY - rect.top;
+        });
+
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                let newLeft = e.clientX - dragOffsetX;
+                let newTop = e.clientY - dragOffsetY;
+
+                // Clamp within window bounds
+                const maxLeft = window.innerWidth - wrapper.offsetWidth;
+                const maxTop = window.innerHeight - wrapper.offsetHeight;
+
+                newLeft = Math.max(0, Math.min(maxLeft, newLeft));
+                newTop = Math.max(0, Math.min(maxTop, newTop));
+
+                wrapper.style.left = `${newLeft}px`;
+                wrapper.style.top = `${newTop}px`;
+            }
+
+            if (isResizing) {
+                const dx = e.clientX - startX;
+                const dy = e.clientY - startY;
+                const newWidth = Math.max(50, startWidth + dx);
+                const newHeight = Math.max(50, startHeight + dy);
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+                draw();
+            }
+        });
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            isResizing = false;
+        });
+
+        // Resizing
+        resizeHandle.addEventListener('mousedown', (e) => {
+            isResizing = true;
+            startX = e.clientX;
+            startY = e.clientY;
+            startWidth = canvas.width;
+            startHeight = canvas.height;
+            e.preventDefault();
+        });
+
+        draw();
+    </script>
+
+</body>
+
+</html>

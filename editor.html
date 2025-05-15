@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings Menu</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+        }
+
+        /* Hamburger styles */
+        .hamburger {
+            cursor: pointer;
+            padding: 1rem;
+            font-size: 1.5rem;
+            background: #f4f4f4;
+            border: none;
+        }
+
+        .menu {
+            display: none;
+            padding: 1rem;
+            background: #eee;
+            border-top: 1px solid #ccc;
+        }
+
+        .menu.open {
+            display: block;
+        }
+
+        .row {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 0.25rem;
+        }
+
+        input[type="number"] {
+            padding: 0.5rem;
+            width: 100px;
+        }
+
+        /* for game of life styling */
+
+        .gol-box {
+            position: relative;
+            height: 200px;
+            border: solid #586e75 5px;
+            resize: both;
+            top: 100px;
+            left: 100px;
+            width: 200px;
+            height: 150px;
+            border: 2px solid #444;
+            box-sizing: border-box;
+            cursor: move;
+            resize: both;
+            overflow: auto;
+        }
+
+        canvas#board {
+            border: 1px solid #990000;
+            resize: both;
+            overflow: auto;
+        }
+
+        #canvasWrapper {
+            position: relative;
+            display: inline-block;
+            border: 2px solid #333;
+        }
+
+        canvas {
+            display: block;
+            background: #f0f0f0;
+        }
+
+        .resizer {
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: #555;
+            right: 0;
+            bottom: 0;
+            cursor: se-resize;
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="hamburger" onclick="toggleMenu()">☰ Menu</button>
+
+    <div id="settingsMenu" class="menu">
+        <div class="row">
+            <div class="input-group">
+                <label for="cellSize">Cell size</label>
+                <input type="number" id="cellSize" name="cellSize" />
+            </div>
+            <div class="input-group">
+                <label for="boardHeight">Board height</label>
+                <input type="number" id="boardHeight" name="boardHeight" />
+            </div>
+            <div class="input-group">
+                <label for="boardWidth">Board width</label>
+                <input type="number" id="boardWidth" name="boardWidth" />
+            </div>
+        </div>
+    </div>
+
+    <div id="canvasWrapper">
+        <canvas id="board" width="300" height="200"></canvas>
+        <div class="resizer" id="resizer"></div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('settingsMenu');
+            menu.classList.toggle('open');
+        }
+    </script>
+
+    <script src="conway2.js"></script>
+</body>
+
+</html>

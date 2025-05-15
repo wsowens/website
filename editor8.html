@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resizable Canvas Component</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        resizable-canvas {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+
+    <resizable-canvas style="top: 50px; left: 50px;"></resizable-canvas>
+    <resizable-canvas style="top: 300px; left: 400px;"></resizable-canvas>
+
+    <script>
+        class ResizableCanvas extends HTMLElement {
+            constructor() {
+                super();
+                const shadow = this.attachShadow({ mode: 'open' });
+
+                const wrapper = document.createElement('div');
+                wrapper.id = 'canvasWrapper';
+
+                wrapper.innerHTML = `
+          <style>
+            :host {
+              display: block;
+              position: absolute;
+            }
+
+            #canvasWrapper {
+              position: relative;
+              display: inline-block;
+              border: 2px solid #333;
+              background: white;
+              user-select: none;
+            }
+
+            canvas {
+              display: block;
+              background: #f0f0f0;
+            }
+
+                   .window-id {
+            width: 120px;
+            border: none;
+            background: transparent;
+            text-align: left;
+            font-size: 14px;
+            font-family: sans-serif;
+            color: #333;
+        }
+
+        .window-id:focus {
+            outline: none;
+        }
+
+
+            .canvas-info {
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 14px;
+                font-family: sans-serif;
+                color: #333;
+            }
+
+            .drag-handle {
+              position: absolute;
+              top: 0;
+              left: 0;
+              right: 0;
+              height: 30px;
+              background: #ccc;
+              cursor: move;
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              padding: 0 8px;
+              box-sizing: border-box;
+              font-size: 12px;
+              z-index: 5;
+            }
+
+            .handle-edge, .handle-corner {
+              position: absolute;
+              background: transparent;
+              border: 2px solid red;
+              z-index: 10;
+            }
+
+            .handle-corner {
+              width: 12px;
+              height: 12px;
+            }
+
+            .nw { top: -6px; left: -6px; cursor: nwse-resize; }
+            .ne { top: -6px; right: -6px; cursor: nesw-resize; }
+            .sw { bottom: -6px; left: -6px; cursor: nesw-resize; }
+            .se { bottom: -6px; right: -6px; cursor: nwse-resize; }
+
+            .n { top: -6px; left: 6px; right: 6px; height: 12px; cursor: ns-resize; }
+            .s { bottom: -6px; left: 6px; right: 6px; height: 12px; cursor: ns-resize; }
+            .e { top: 6px; bottom: 6px; right: -6px; width: 12px; cursor: ew-resize; }
+            .w { top: 6px; bottom: 6px; left: -6px; width: 12px; cursor: ew-resize; }
+
+            .hidden { visibility: hidden; }
+          </style>
+
+          <div class="drag-handle">
+            <input class="window-id" value="Window" style="width: 80px;" />
+            <span class="canvas-info">Resolution: 300 x 200</span>
+          </div>
+          <canvas width="300" height="200"></canvas>
+
+          <div class="handle-corner nw" data-dir="nw"></div>
+          <div class="handle-corner ne" data-dir="ne"></div>
+          <div class="handle-corner sw" data-dir="sw"></div>
+          <div class="handle-corner se" data-dir="se"></div>
+          <div class="handle-edge n" data-dir="n"></div>
+          <div class="handle-edge s" data-dir="s"></div>
+          <div class="handle-edge e" data-dir="e"></div>
+          <div class="handle-edge w" data-dir="w"></div>
+        `;
+
+                shadow.appendChild(wrapper);
+
+                const canvas = shadow.querySelector('canvas');
+                const resolutionText = shadow.querySelector('.canvas-info');
+                const dragHandle = shadow.querySelector('.drag-handle');
+                const handles = [...shadow.querySelectorAll('.handle-corner'), ...shadow.querySelectorAll('.handle-edge')];
+
+                let isDragging = false;
+                let isResizing = false;
+                let dir = '';
+                let startX, startY, startLeft, startTop, startWidth, startHeight;
+
+                const draw = () => {
+                    const ctx = canvas.getContext('2d');
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = "#cce";
+                    ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.strokeStyle = "#333";
+                    ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+                    resolutionText.textContent = `Resolution: ${canvas.width} x ${canvas.height}`;
+                };
+
+                dragHandle.addEventListener('mousedown', (e) => {
+                    isDragging = true;
+                    startX = e.clientX;
+                    startY = e.clientY;
+                    const rect = this.getBoundingClientRect();
+                    startLeft = rect.left;
+                    startTop = rect.top;
+                });
+
+                handles.forEach(handle => {
+                    handle.addEventListener('mousedown', (e) => {
+                        isResizing = true;
+                        dir = e.target.dataset.dir;
+                        const rect = canvas.getBoundingClientRect();
+                        startX = e.clientX;
+                        startY = e.clientY;
+                        startLeft = rect.left;
+                        startTop = rect.top;
+                        startWidth = canvas.width;
+                        startHeight = canvas.height;
+                        e.preventDefault();
+                        e.stopPropagation();
+                    });
+                });
+
+                window.addEventListener('mousemove', (e) => {
+                    if (isDragging) {
+                        let dx = e.clientX - startX;
+                        let dy = e.clientY - startY;
+
+                        let newLeft = startLeft + dx;
+                        let newTop = startTop + dy;
+
+                        const maxLeft = window.innerWidth - wrapper.offsetWidth;
+                        const maxTop = window.innerHeight - wrapper.offsetHeight;
+                        this.style.left = `${Math.max(0, Math.min(maxLeft, newLeft))}px`;
+                        this.style.top = `${Math.max(0, Math.min(maxTop, newTop))}px`;
+                    }
+
+                    if (isResizing) {
+                        let dx = e.clientX - startX;
+                        let dy = e.clientY - startY;
+                        let newWidth = startWidth;
+                        let newHeight = startHeight;
+
+                        if (dir.includes('e')) newWidth = startWidth + dx;
+                        if (dir.includes('s')) newHeight = startHeight + dy;
+                        if (dir.includes('w')) newWidth = startWidth - dx;
+                        if (dir.includes('n')) newHeight = startHeight - dy;
+
+                        newWidth = Math.max(50, newWidth);
+                        newHeight = Math.max(50, newHeight);
+
+                        if (dir.includes('w')) {
+                            this.style.left = `${Math.max(0, startLeft + (startWidth - newWidth))}px`;
+                        }
+                        if (dir.includes('n')) {
+                            this.style.top = `${Math.max(0, startTop + (startHeight - newHeight))}px`;
+                        }
+
+                        canvas.width = newWidth;
+                        canvas.height = newHeight;
+
+                        draw();
+                    }
+                });
+
+                window.addEventListener('mouseup', () => {
+                    isDragging = false;
+                    isResizing = false;
+                });
+
+                draw();
+            }
+        }
+
+        customElements.define('resizable-canvas', ResizableCanvas);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,274 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Draggable & Resizable Canvas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: hidden;
+            font-family: sans-serif;
+        }
+
+        #canvasWrapper {
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            border: 2px solid #333;
+            background: white;
+            user-select: none;
+        }
+
+        canvas {
+            display: block;
+            background: #f0f0f0;
+        }
+
+        .handle-edge {
+            position: absolute;
+            background: transparent;
+            border: 2px solid red;
+            z-index: 10;
+        }
+
+        .handle-corner {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: transparent;
+            border: 2px solid red;
+            z-index: 10;
+        }
+
+        /* Corners */
+        .nw {
+            top: -6px;
+            left: -6px;
+            cursor: nwse-resize;
+        }
+
+        .ne {
+            top: -6px;
+            right: -6px;
+            cursor: nesw-resize;
+        }
+
+        .sw {
+            bottom: -6px;
+            left: -6px;
+            cursor: nesw-resize;
+        }
+
+        .se {
+            bottom: -6px;
+            right: -6px;
+            cursor: nwse-resize;
+        }
+
+        /* Edges */
+        .n {
+            top: -6px;
+            left: 6px;
+            right: 6px;
+            height: 12px;
+            cursor: ns-resize;
+        }
+
+        .s {
+            bottom: -6px;
+            left: 6px;
+            right: 6px;
+            height: 12px;
+            cursor: ns-resize;
+        }
+
+        .e {
+            top: 6px;
+            bottom: 6px;
+            right: -6px;
+            width: 12px;
+            cursor: ew-resize;
+        }
+
+        .w {
+            top: 6px;
+            bottom: 6px;
+            left: -6px;
+            width: 12px;
+            cursor: ew-resize;
+        }
+
+        .drag-handle {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 30px;
+            background: #ccc;
+            cursor: move;
+            z-index: 5;
+        }
+
+        .info-text {
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 14px;
+            color: #000;
+            pointer-events: none;
+            z-index: 6;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="canvasWrapper">
+        <div class="drag-handle" id="dragHandle"></div>
+        <div class="info-text" id="infoText">Canvas: -- x --</div>
+        <canvas id="myCanvas" width="300" height="200"></canvas>
+
+        <!-- Edges and corners -->
+        <div class="handle-corner nw" data-dir="nw"></div>
+        <div class="handle-corner ne" data-dir="ne"></div>
+        <div class="handle-corner sw" data-dir="sw"></div>
+        <div class="handle-corner se" data-dir="se"></div>
+        <div class="handle-edge n" data-dir="n"></div>
+        <div class="handle-edge s" data-dir="s"></div>
+        <div class="handle-edge e" data-dir="e"></div>
+        <div class="handle-edge w" data-dir="w"></div>
+    </div>
+
+    <script>
+        const wrapper = document.getElementById('canvasWrapper');
+        const canvas = document.getElementById('myCanvas');
+        const ctx = canvas.getContext('2d');
+        const dragHandle = document.getElementById('dragHandle');
+        const infoText = document.getElementById('infoText');
+        const handles = [...document.querySelectorAll('.handle-corner'),
+        ...document.querySelectorAll('.handle-edge')];
+
+        let isDragging = false;
+        let isResizing = false;
+        let dir = '';
+        let startX, startY, startLeft, startTop, startWidth, startHeight;
+
+        function draw() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = "#cce";
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+            ctx.strokeStyle = "#333";
+            ctx.strokeRect(10, 10, canvas.width - 20, canvas.height - 20);
+            infoText.textContent = `Canvas: ${canvas.width} x ${canvas.height}`;
+        }
+
+        // Handle dragging
+        dragHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            const rect = wrapper.getBoundingClientRect();
+            startX = e.clientX;
+            startY = e.clientY;
+            startLeft = rect.left;
+            startTop = rect.top;
+        });
+
+        // Handle resizing
+        handles.forEach(handle => {
+            handle.addEventListener('mousedown', (e) => {
+                isResizing = true;
+                dir = e.target.dataset.dir;
+                const rect = wrapper.getBoundingClientRect();
+                startX = e.clientX;
+                startY = e.clientY;
+                startLeft = rect.left;
+                startTop = rect.top;
+                startWidth = canvas.width;
+                startHeight = canvas.height;
+                e.preventDefault();
+                e.stopPropagation();
+            });
+        });
+
+        // Mouse move
+        window.addEventListener('mousemove', (e) => {
+            if (isDragging) {
+                let dx = e.clientX - startX;
+                let dy = e.clientY - startY;
+
+                let newLeft = startLeft + dx;
+                let newTop = startTop + dy;
+
+                // Clamp to window
+                const maxLeft = window.innerWidth - wrapper.offsetWidth;
+                const maxTop = window.innerHeight - wrapper.offsetHeight;
+                wrapper.style.left = `${Math.max(0, Math.min(maxLeft, newLeft))}px`;
+                wrapper.style.top = `${Math.max(0, Math.min(maxTop, newTop))}px`;
+            }
+
+            if (isResizing) {
+                let dx = e.clientX - startX;
+                let dy = e.clientY - startY;
+                let newWidth = startWidth;
+                let newHeight = startHeight;
+                let newLeft = startLeft;
+                let newTop = startTop;
+
+                // Available space
+                const maxWidthRight = window.innerWidth - startLeft;
+                const maxHeightBottom = window.innerHeight - startTop;
+                const maxWidthLeft = startLeft + startWidth;
+                const maxHeightTop = startTop + startHeight;
+
+                // Horizontal resize
+                if (dir.includes('e')) {
+                    newWidth = Math.min(startWidth + dx, maxWidthRight);
+                }
+                if (dir.includes('w')) {
+                    newWidth = Math.min(startWidth - dx, maxWidthLeft);
+                    newLeft = startLeft + dx;
+                }
+
+                // Vertical resize
+                if (dir.includes('s')) {
+                    newHeight = Math.min(startHeight + dy, maxHeightBottom);
+                }
+                if (dir.includes('n')) {
+                    newHeight = Math.min(startHeight - dy, maxHeightTop);
+                    newTop = startTop + dy;
+                }
+
+                // Enforce minimum size
+                if (newWidth < 50) {
+                    newLeft -= 50 - newWidth;
+                    newWidth = 50;
+                }
+
+                if (newHeight < 50) {
+                    newTop -= 50 - newHeight;
+                    newHeight = 50;
+                }
+
+                canvas.width = newWidth;
+                canvas.height = newHeight;
+
+                wrapper.style.left = `${Math.max(0, newLeft)}px`;
+                wrapper.style.top = `${Math.max(0, newTop)}px`;
+
+                draw();
+            }
+        });
+
+
+        window.addEventListener('mouseup', () => {
+            isDragging = false;
+            isResizing = false;
+        });
+
+        draw();
+    </script>
+</body>
+
+</html>
