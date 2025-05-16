@@ -1,9 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Lato:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800&family=Lato:wght@400;700&display=swap');
 
 html {
     /* fix page repositioning due to scrollbar */
     margin-left: calc(100vw - 100%);
-    font-family: 'Cormorant Garamond', serif;
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
 }
 
 body {
@@ -26,7 +27,7 @@ main {
 /* nav bar styling */
 nav {
     width: 100%;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     display: flex;
     flex-wrap: wrap-reverse;
     align-items: flex-end;
@@ -87,9 +88,9 @@ ul,
 ol {
     padding-left: 5%;
     padding-right: 5%;
-    line-height: 1.2;
-    margin: 1em 0;
-    font-size: 1.4em;
+    margin: 1rem 0;
+    font-size: 1.125rem; /* ~ 18px looks the most readable with EB garamond based on my testing */
+    line-height: 1.40625rem; /* 1.25x line height */
     list-style-position: inside;
 }
 
@@ -183,7 +184,9 @@ div.sect-heading h3 {
     padding-bottom: 0.5em;
 }
 
-blockquote {}
+blockquote {
+
+}
 
 /* for the blog */
 a.blog-link {
