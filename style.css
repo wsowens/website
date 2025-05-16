@@ -97,7 +97,8 @@ ol {
 
 code {
     font-family: monospace;
-    background: lightgray;
+    color: #2aa198;
+    font-size: 1.0rem;
 }
 
 .caption {
@@ -112,25 +113,6 @@ img {
 }
 
 /* div stuff */
-.bio {
-    padding-left: 5%;
-    padding-right: 5%;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-}
-
-div#bio p {
-    padding: 0;
-}
-
-#bio-text {
-    flex-grow: 2;
-    width: 50%;
-    min-width: 250px;
-    font-size: 1.4em;
-}
-
 #avatar-box {
     flex-grow: 2;
     width: 50%;
@@ -145,18 +127,9 @@ div#bio p {
     border-radius: 100%;
     width: 50%;
     float: right;
-
 }
 
-.normal-inset {
-    background-color: #fdf6e3;
-    padding-left: 2vw;
-    padding-right: 2vw;
-    padding-top: 2%;
-    padding-bottom: 2%;
-    display: flex;
-}
-
+/* old classes for contact info */
 .contact {
     display: flex;
     font-size: 1.4em;
@@ -167,67 +140,4 @@ div.contact img {
     max-height: 1em;
     margin: 0 .5em;
     max-width: 2em;
-}
-
-/* for the Research page */
-.sect-heading {
-    display: flex;
-    padding: 0 5%;
-    justify-content: space-between;
-    border-bottom: solid #93a1a1 3px;
-    margin: 3em 0 0;
-    flex-wrap: wrap;
-}
-
-div.sect-heading h3 {
-    margin: 0;
-    padding-bottom: 0.5em;
-}
-
-blockquote {
-
-}
-
-/* for the blog */
-a.blog-link {
-    color: black;
-}
-
-div.blog-entry {
-    margin: 0 5% 2em;
-    padding-left: 5%;
-    border-left: solid #93a1a1 2px;
-}
-
-div.blog-entry:hover {
-    border-left: solid #268bd2 5px;
-}
-
-div.blog-entry h2 {
-    padding: 0;
-    margin: 1em 0 0;
-    font-family: 'Cormorant Garamond', serif;
-}
-
-time {
-    padding-left: 5%;
-}
-
-div.blog-entry time {
-    padding: 0;
-    margin: 0 0 5em;
-}
-
-div.blog-entry hr {
-    display: none;
-}
-
-/* article styling */
-div.blog-entry p {
-    padding: 0;
-    font-size: 1.2em;
-}
-
-h2.blog-title {
-    margin-bottom: 0;
 }
