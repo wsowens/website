@@ -8,3 +8,5 @@ etc/*
 pelican_env/*
 
 .vscode/*
+
+.DS_STORE

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Will Owens</title>
+    <link href="style.css" rel="stylesheet">
+    <script src="conway.js"></script>
+    <link href="conway.css" rel="stylesheet">
+</head>
+
+<style>
+    .bio-figure {
+        text-align: center;
+        margin: 1rem 0;
+    }
+    figure.bio-figure img {
+    max-width: 95%;
+    max-height: 50vh;
+    margin: auto;
+    height: auto;
+    width: auto;
+    }
+    figure.bio-figure figcaption {
+        /*margin: 0.5rem 0;*/
+        color: #222222;
+    }
+</style>
+<body>
+    <div class="wrapper">
+        <nav>
+            <div class="nav-inner">
+                <div class="nav-button">
+                    <a href="/">About</a>
+                </div>
+                <div class="nav-button">
+                    <a href="projects">Projects</a>
+                </div>
+                <div class="nav-button">
+                    <a class="current">Life</a>
+                </div>
+                <div class="nav-button">
+                    <a href="etc">Et cetera</a>
+                </div>
+            </div>
+            <div class="home-button">
+                <a href="/" style="color: inherit;">Will Owens</a>
+            </div>
+        </nav>
+        <div class="gol-box">
+            <canvas id="board"></canvas>
+            <div class="caption">the dream will reveal</div>
+        </div>
+        <h1>My Life</h1>
+        <p>A memoir in ~2,589 words.</p>
+        <h2><em>Childhood in Florida</em></h2>
+        <figure class="bio-figure">
+            <img src="images/life/will-mom-brother.webp">
+            <figcaption>My mom, my little brother Gage, and I.</fgcaption>
+        </figure>
+        <p>I was born in the Deep South to two hillbilly chemical engineers. I know it's cliché to say that you have the best parents ever, but I've never met any better than mine.  </p>
+        <p>My parents are the kind of people who would sacrifice anything for their children, who taught me to always stand up with my back straight, and who showed me how to live a life you can be proud of. In a word, they're Southern hicks. </p>
+        <p>They're also educated hicks. Some of my earliest memories are of scientific lessons, like demonstrations of an eclipse with a lunar dinner plate and a solar chandelier. My mom read to me every afternoon, and my dad read to me every night. The hunger <em>to know</em> began early in my childhood, and was as much spontaneous as it was carefully cultivated by my mom and dad. </p>
+        <figure class="bio-figure">
+            <img src="images/life/will-dad-table-cropped.webp" style="max-height: 90vh"></img>
+            <figcaption>My dad regaling me at the dinner table.</figcaption>
+        </figure>
+        <p>These lessons were complemented by a lot of time outside with my little brother, Gage. We often found ourselves building forts, poking at bugs, or digging a mudhole just to see what would happen. Later, my dad would take us camping in the Florida wilderness and, much later, backpacking on the Appalachian Trail. Even as a little kid, it's hard not to absorb a deep wonder for the Universe and our role in it when you spend this kind of time outside. </p>
+        <p>Yet, the most important scientific lesson of my youth didn't come from a lecture in the car or a demonstration at the dinner table, but from my dad's offbeat sense of humor. Often, when tucking us in after a bedtime story, my father would tease us with some absurd claim like, "did you know you and your brother were born part-monkey?"</p>
+        <p> "No way!" we'd protest.  </p>
+        <p> "It's true, you both came home from the hospital with tails." </p>
+        <p> "Then where's my tail now?" we'd ask, checking our pajamas for any extra vertebrae. </p>
+        <p>Dad would smirk and say something like, "we had to take you back to the hospital so the doctors could cut it off, we have records to prove it."</p>
+        <p>This back and forth would continue until at some point, my brother and I would dig in our heels and assert, "no, that's not right!"</p>
+        <p>"Exactly," he would say with a chuckle and a proud smile. "That's not right." </p>
+        <p>I didn't know this at the time, but these little gags were not for Dad's amusement. Okay, they were at least partly for his amusement—but they were also part of my dad's life mission to vaccinate us against bullshit. </p>
+        <p>Throughout grade school and even college, he constantly encouraged us to question those around us, question authority, and—most importantly—question experts. This is precisely the kind of unwavering intellectual honesty and rigor that <a href="https://calteches.library.caltech.edu/51/2/CargoCult.htm">Feynman articulates in "Cargo Cult Science"</a>, and this skepticism has propelled me in science perhaps even more than curiosity and wonder.</p>
+        <figure class="bio-figure">
+            <img src="images/life/will-science-fair.jpeg" loading="lazy"></img>
+            <figcaption>Me, age 9, laboring over my science fair project.</fgcaption>
+        </figure>
+        <h3><em>Adolescence: discovering the grindset</em></h3>
+        <p> Like most 12-year-old boys, I loved video games growing up. My parents never placed limits on me as long as my grades were perfect (and I gave them little cause for worry on that front). In sixth grade, I essentially lived in <em>The Elder Scrolls IV: Oblivion</em>, until around 2010 when my friend Griffin told me about this indie game "Minecraft". At 12 years old, I began playing  <em>Minecraft</em> version Beta 1.2. At 27 years old, I still hop on every month or two. </p>
+        <figure class="bio-figure">
+            <img src="images/life/game-screenshots.webp" loading="lazy"></img>
+            <figcaption>Screenshots, from left to right: my <em>Oblivion</em> character in 2010, my <em>Minecraft</em> base in 2012, and the opening of my edgy text adventure game.</figcaption>
+        </figure>
+        <p> Eventually, Griffin and I even made a video game of our own (some irredeemably edgy text adventure about a mutual friend wreaking havoc on our town). Our final product was pretty mediocre (see above). Importantly though, I cut my teeth programming in Python, which proved to be <em>very</em> useful in the next stages of my life.  </p>
+        <p>Outside my PC gaming and programming on the weekends though, I began surrendering my high school life to classwork. This happened mostly of my own volition. My mom and dad were encouraging but not helicopters or "Tiger parents" by any means.</p>
+        <p>I distinctly remember one moment in tenth grade, coming home from a study date with less studying than promised. Class started at 7:30 AM the next morning, and I barely knew the difference between Meiosis I and Meiosis II. I asked myself, "how badly do you want this A?". I set my alarm, hit the sack, and cracked my textbook at 4:00 AM the next morning.</p>
+
+        <figure class="bio-figure">
+            <img src="images/life/will-high-school.webp" loading="lazy"></img>
+            <figcaption>Left: Me roughly at age 16. Right: Me receiving my Eagle Scout rank at age 17.</figcaption>
+        </figure>
+
+        <p>Over the next few years, this monastic ritual, poring over textbooks at the kitchen table before dawn, gave me a deep affection for the sciences, especially molecular biology. By senior year, I had completed all of the math courses offered at Lawton Chiles High School and unwittingly bumbled my way into automatic dual enrollment at Florida State University. For my senior year, I had the unconventional experience of starting my morning in a normal classroom, only to drive downtown through lunchtime traffic and take differential equations and upper level biology classes in the afternoon and evening.</p>
+
+        <p>After graduation, I planned to pursue a degree in biology. The increasing buzz around things like CRISPR made it feel like a technological revolution was imminent, and I wanted in on the action. In the meantime, I volunteered in Hank Bass's maize genetics lab at FSU. I remember many hours in the microscope room and shadowing students doing all kinds of inscrutable things to little tubes of clear liquid. However, words from one postdoc really stuck in my mind: "we desperately need more computational biologists."</p>
+
+        <p>At the end of the summer, I moved about two hours away to attend the University of Florida. I declared a second major in computer science. </p>
+
+        <h3><em>University: an evolution</em></h3>
+        <p>When I arrived at UF in the fall, I found that I had completed about 75% of the coursework for my biology degree already, but had much more catching up to do in computer science. I was still very much a Python script kiddie, and found myself scrambling to learn Java and C++ for my first few programming classes. There were many nights of battling with the compiler and feeling like a complete fraud. </p>
+
+        <figure class="bio-figure">
+            <img src="images/life/will-molecules.jpeg" loading="lazy" style="max-height:50vh"></img>
+            <figcaption>Me, Organic Chemistry TA, rehearsing the Diels-Alder reaction in my apartment.</figcaption>
+        </figure>
+
+        <p>Eventually though, my confidence grew. I joined UF's <a href="https://ufosc.org">Open Source Club </a> and took on more projects in my free time. I took inspiration from my mediocre adventure game in high school and developed <a href="/TODO">a multiplayer, text-based game engine</a> with some friends. I became so immersed in computer science at times that I nearly forgot I was a biology student. </p>
+
+        <p>I found my way back to biology by way of Michael Kladde's lab at UF. The advice to pursue computational biology had paid off, and by my second year of undergrad I was a paid bioinformatician, doing nearly all the Kladde Lab's genomic analysis on UF's compute cluster. Towards the end of undergrad, I expanded into traditional molecular biology and cell culture and wrote an honors thesis exploring an enhancer for a gene important in cancer. </p>
+
+        <p>The most formative moment of my undergrad experience, however, came when my friend Max from Organic Chemistry flagged me down one humid morning outside the gym. </p>
+
+        <p>"Will, have you ever heard of iGEM?" he asked. </p>
+
+        <p>I hadn't. He was referring, of course, to the renowned <em>International Genetically Engineered Machines</em> competition, where student-led teams undertook new synthetic biology projects. Synthetic biology seemed like the marriage of everything I loved: molecular biology and programming. </p>
+
+        <p>As it turns out, a group of clueless undergrads trying to plan and deliver a synthetic biology project in just under a year makes for a hectic experience, especially when they're learning everything as they go. I've written about <a href="/TODO">our iGEM project</a> before, but suffice it to say that, in spite of all the chaos, working on this self-directed undergrad project made for a deeply empowering experience. </p>
+
+        <p>Most importantly, the iGEM jamboree brought me to Boston. It was there that I was exposed to Boston's vibrant biotech scene. And it was there, one night, that my friend and then-MIT undergrad Sasha gave me a tour of his lab and the Institute's labyrinthine tunnels. I was hooked. Everything about MIT felt like the physical embodiment of cutting-edge science. My new dream was to attend MIT for my PhD. </p>
+
+        <figure class="bio-figure">
+            <img src="images/life/will-sasha-mit.jpeg" style="max-width:60%" loading="lazy"></img>
+            <figcaption>Me (left) after a tour of MIT from Sasha (right).</figcaption>
+        </figure>
+
+        <p>I didn't feel ready for MIT though. My college experience had been edifying, but on paper it felt eclectic and spread-thin. Fortunately, iGEM had exposed me to another key area: startup culture. In February 2020, I applied for research associate positions at half a dozen biotech startups in Boston and the SF Bay Area. I heard back from just one: Octant. They gave me a take-home exam, then an interview, and, finally, an apprenticeship offer. </p>
+
+        <p>Then in March 2020, the whole world fell apart. In April, I emailed my future manager to ask if I still had a job. I did. In May, I graduated from UF with little ceremony, and in July 2020 I packed my things into my mom's old car and drove across the country in the midst of a pandemic.</p>
+
+        <h3><em>Octant: an inflection point</em></h3>
+        <p><a href="https://web.archive.org/web/20250208060016/https://www.octant.bio/blog-posts/the-synbio-apprenticeship-2020-2021">"Octant puts weapons in your hands and sends you into battle."</a> I wrote these words in late 2020, just a few months into my tenure as a Synthetic Biology Apprentice. I've written elsewhere about my experience as <a href="https://www.octant.bio/blog-posts/sba-presenting-the-class-of-2021">an apprentice</a> and later <a href="/TODO">research associate</a> at Octant. Of all the moments of my life that I can look back on proudly, it feels like Octant was my strongest inflection point. It was the first place that really asked for everything I had, where I could find myself assembling a plasmid in the morning, debugging code in the afternoon, and transfecting a cell line in the evening, where I could grind for 80 hours a week and still love it.</p>
+
+        <figure style="
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: auto;
+">
+  <img  src="images/life/sba-day-in-the-life-1.jpg"  loading="lazy" alt="Top left" style="width: 100%; height: 100%; object-fit: cover; grid-column: 1; grid-row: 1;">
+  <img ></img>
+  <img src="images/life/sba-day-in-the-life-2.jpg"   loading="lazy" alt="Bottom right" style="width: 100%; height: 100%; object-fit: cover; grid-column: 1; grid-row: 2;">
+  <img src="images/life/will-octant-pipetting.jpeg"  loading="lazy" alt="Right side" style="width: 100%; height: 100%; object-fit: cover; grid-column: 2; grid-row: 1 / span 2;">
+
+  <figcaption style="grid-column: 1 / span 2; text-align: center; margin-top: 0.5rem;">
+    Left: screenshots from my video, <a href="https://www.youtube.com/watch?v=W9UVyfQaIoo">"A Day in the Life of a Synthetic Biology Apprentice"</a>. Right: pipetting at Octant.
+  </figcaption>
+</figure>
+
+        <p>I loved picking up new lab techniques. I loved learning about corporate finance. I loved the permanently cool weather of the Bay Area, the Berkeley hills and nearby Pacific coast. I loved working with people who matched and reinforced my passion and drive for science. </p>
+
+        <p>At Octant, I was immersed in a different mode of science—one I had glimpsed earlier as part of a scrappy iGEM team. I came to see the power of a small, committed team with the willingness to try new things. Octant embodied the startup mantras of "move fast and break things" and "80% is good enough". In a world where material progress feels stagnant, startups challenge how academia approaches science and technology development. </p>
+
+        <figure class="bio-figure">
+            <img src="images/life/will-brother-california.webp" loading="lazy"></img>
+            <figcaption>Gage and I exploring California. Left: somewhere in Sequoia National Park. Right: gazing into the Pacific. </figcaption>
+        </figure>
+
+        <p>I loved California. I even loved hating on California. But soon, I knew, it would be time to leave. Being three hours behind the East Coast made Minecraft nights with my brother hard and calls with Mom and Dad harder. Being in the Bay Area during apocalyptic fires and peak COVID lockdown was isolating. </p>
+
+        <p>As incredible as my mentors at Octant were, they also impressed upon me that a scientist's most important ability is not just to answer questions, but to ask the right one. This ability is not easily acquired in the urgent atmosphere of a startup, which is why PhD programs exist. </p>
+
+        <p>MIT was still my North Star. But to be honest, I never really believed I could get into MIT. I only applied to a small selection of schools I liked—it would take a really compelling opportunity to pull me away from Octant. Then one day, I checked my email inbox and was shocked to see an interview invite from MIT Biology. My interviews at other graduate schools made the decision harder, but at the end of the day, there was only one choice for me. </p>
+
+        <p>After 2 years in the Bay Area, I packed my bags into a rental car and drove across the country again.</p>
+
+
+        <figure class="bio-figure">
+            <img src="images/life/will-moving.webp" style="max-height:50vh" loading="lazy"></img>
+            <figcaption>Moving cross-country (again) at age 24.</figcaption>
+        </figure>
+        <h3><em>MIT and a dream revealed</em></h3>
+
+        <p>For the first few weeks, it would always take me a few minutes to really wrap my head around the fact that I was going to class <em>at MIT</em>. Every morning when I woke up in my tiny dorm room, I would suddenly remember that <em>I'm at MIT</em>. Classes came and went quickly. Soon, it came time to choose a lab for my thesis work. </p>
+
+        <p>Octant, itself the product of a "young" academic lab, had primed me to seek out younger advisors doing new, interesting science. I rotated in three such labs, all doing research on the frontiers of really peculiar biology. Though I enjoyed them all, I found myself most drawn to Y. Erin Chen's Lab, which opened just weeks earlier in the Broad Institute. I admired Erin's ambition and willingness to dive into really challenging, unknown directions of science. She spoke of <a href="https://en.wikipedia.org/wiki/Pasteur%27s_quadrant">Pasteur's quadrant</a>, the category of experiments that offer both high translational impact and basic scientific insight.</p>
+
+        <p>I joined Erin's lab in May 2023. My (ongoing) <a href="/TODO">thesis project</a> investigates how skin bacteria communicate with our immune system, with the long-term goal of making a new, better class of "living vaccines".</p>
+
+        <p>Despite all this, my most important discovery happened outside the lab—in a sense. </p>
+
+        <p>My whole life, I always imagined the perfect woman for me would be someone who shared my love for science and technology. Someone who could be intelligent and sophisticated, but didn’t mind rolling up her sleeves and getting her hands dirty. A fiercely loyal ride-or-die that would have your back in the worst times. It wouldn’t hurt if she was a hot gamer girl too.</p>
+
+        <p>I was certain that this woman didn't exist. And then one day I found her, sitting next to me and staring at jellyfish neurons through a microscope. </p>
+
+        <figure class="bio-figure">
+            <img src="images/life/will-and-renee.webp" loading="lazy"></img>
+            <figcaption>Left: Renée on the microscope. Right: Renée and I in front of the MIT Dome.</figcaption>
+        </figure>
+
+        <p>Renée and I entered our third rotation at MIT as friends and left as boyfriend and girlfriend. </p>
+
+        <p>Renée has a special soul like none I’ve ever met before. My friend once asked me, “Is she like that all that time?”</p>
+
+        <p>And she is. </p>
+
+        <p>She bounces through life with unmatched energy and imbues every little thing with whimsy and joy. Everybody likes Renée. And I fell madly in love with her—the kind where it feels like you've jumped out of a plane every time you talk to her. I can't escape the feeling that my half-decade, monomaniacal desire to get into MIT was really Providence guiding me here just to meet Renée. </p>
+
+        <p>We got engaged in autumn of 2024. </p>
+        <figure class="bio-figure">
+            <img src="images/life/will-renee-proposal.jpeg" style="max-height:70vh" loading="lazy"></img>
+            <figcaption>Me proposing to Renée.</figcaption>
+        </figure>
+
+        <p>I don't know what will happen after MIT. Will I drift back towards the keyboard and mouse after my sojourn in the vivarium? Will I flee New England's dreadful weather for the Bay Area I so dearly miss, or explore someplace new? Will I launch a biotech startup, an indie science nonprofit, or become a subsistence farmer in the woods? I'm not sure. But whatever I do, I will do it with Renée. </p>
+
+        <figure class="bio-figure">
+            <img src="images/life/will-on-the-puter.jpeg" style="max-width:80%" loading="lazy">
+        </figure>
+
+        <p>Thank you for reading my story.</p>
+    </div>
+</body>
+
+</html>
