@@ -10,6 +10,6 @@ clean:
 	rm -rf etc/*
 
 # installing pelican and the appropriate dependencies
-pelican_env/bin/pelican: 
-	python3 -m venv pelican_env
+pelican_env/bin/pelican: requirements.txt 
+	python3 -m venv --clear pelican_env
 	pelican_env/bin/python3 -m pip install -r requirements.txt
