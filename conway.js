@@ -14,7 +14,8 @@ window.addEventListener('load', function () {
         return;
     }
     golBox = document.getElementsByClassName("gol-box")[0];
-    canvas = document.getElementById("board");
+    CELL_COLOR = golBox.style.color || "#586e75";
+    canvas = document.getElementById("gol-board");
     ctx = canvas.getContext("2d");
     //console.log(ctx);
     // run resizeWindow to check the width / height
