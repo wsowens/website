@@ -8,6 +8,7 @@
     font-weight: 100;
     height: 200px;
     border: solid #586e75 5px;
+}
 
 #gol-board {
     position: absolute;
