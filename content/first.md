@@ -2,6 +2,7 @@ Title: First Post
 Author: Will Owens
 Date: 10-14-2020 9:32PM
 Summary: I started a blog this week. Here's why.
+Tags: life
 
 Let's get the obvious out of the way;
 very few people are going to read this.

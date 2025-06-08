@@ -3,6 +3,7 @@ Author: Will Owens
 Date: 3-13-2021 9:00PM
 Summary: Or, what I learned from my first Python package.
 Slug: python-project
+Tags: python
 
 I will never write another line of code for [swampymud](https://github.com/ufosc/swampymud), my longest-running project.
 As of today, I've authored 389 commits pushed across 119 unique days.

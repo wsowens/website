@@ -2,7 +2,8 @@ Title: It's hard to be a good techno-optimist
 Author: Will Owens
 Date: 2024-07-02
 Slug: techno-optimist-hype
-Summary: The pitfalls of techno-optimism and the subtle distinction between hype and hope
+Summary: The pitfalls of techno-optimism and the subtle distinction between hype and hope.
+Tags: essay, technology
 
 ---
 _This essay was originally posted [on Substack](https://ovvens.substack.com/p/its-hard-to-be-a-good-techno-optimist#footnote-anchor-7-146088632)._

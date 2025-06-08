@@ -3,6 +3,7 @@ Author: Will Owens
 Date: 2025-06-05
 Slug: politics-ugly
 Summary: Political urges do not come from some high seat of intellect in your mind. They're spasms from the dark recesses of your brain.
+Tags: essay, politics
 
 Your politics are the ugliest thing about you. We've lost the wisdom that you should feel a little bit ashamed of your political urges. Like sex, politics are best discussed in hushed whispers with your husband or wife, or maybe a close friend. 
 

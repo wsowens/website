@@ -3,6 +3,7 @@ Date: 02-16-2023
 Author: Will Owens
 Summary: The worst thing you can do is be an asshole. The second worst thing you can do is be forgettable. 
 Slug: interviewing
+Tags: advice
 
 **The worst thing you can do is be an asshole. The second worst thing you can do is be forgettable.** 
 

@@ -3,6 +3,7 @@ Author: Will Owens
 Date: 8-26-2022
 Slug: emma-story
 Summary: Emma wasn’t like other girls
+Tags: story
 
 Emma wasn’t like other girls. She wore black lipstick nearly all the time and never dared to let a splash of pink touch her wardrobe. When her parents suggested that she try out for the cheerleading team, she picked up roller skating instead. She cared more about _My Hero Academia_ than _Friends_ or _The Bachelor_ or whatever the other girls were watching. And when prom would finally come in the spring, Emma would wear Converse, not high heels. Because Emma wasn’t like other girls.
 

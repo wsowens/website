@@ -3,6 +3,7 @@ Author: Will Owens
 Date: 1-5-2021 8:15 AM
 Slug: momentum
 Summary: How I learned to defeat sloth with this one weird trick.
+Tags: advice
 
 On New Year's Day, I found myself reflecting on what I had accomplished in 2020, but also on what I hadn't accomplished.
 True, I graduated college, and true, I had started a great new job.
