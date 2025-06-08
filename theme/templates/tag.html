@@ -22,7 +22,7 @@
                     <a href="/life">Life</a>
                 </div>
                 <div class="nav-button">
-                    <a class="current">Et cetera</a>
+                    <a href="/etc/" class="current">Et cetera</a>
                 </div>
             </div>
             <div class="home-button">
@@ -33,6 +33,23 @@
     <div class="wrapper">
         <h1>Et cetera
         </h1>
+        {% if tag == "essay" %}
+        <h2>
+            <span style="font-family: 'EB Garamond', serif; font-weight: 400; font-style: italic">(An archive of my 
+                <a href="/etc/tag/essay" class="current">essays</a>,
+                <a href="/etc/tag/story" class="not-current">stories</a>, and 
+                <a href="/etc/tags" class="not-current">other writing</a>.)
+            </span>
+        </h2>
+        {% elif tag == "story" %}
+        <h2>
+            <span style="font-family: 'EB Garamond', serif; font-weight: 400; font-style: italic">(An archive of my 
+                <a href="/etc/tag/essay" class="not-current">essays</a>,
+                <a href="/etc/tag/story" class="current">stories</a>, and 
+                <a href="/etc/tags" class="not-current">other writing</a>.)
+            </span>
+        </h2>
+        {% else %}
         <h2>
             <span style="font-family: 'EB Garamond', serif; font-weight: 400; font-style: italic">(An archive of my 
                 <a href="/etc/tag/essay" class="not-current">essays</a>,
@@ -40,7 +57,8 @@
                 <a href="/etc/tags" class="not-current">other writing</a>.)
             </span>
         </h2>
-        <h3>Most recent posts:</h3>
+        {% endif %}
+        <h3>Most recent posts tagged with <span class="tag-highlight">'{{tag}}'</span>:</h3>
         {% for article in articles_page.object_list %}
         <a href="/etc/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}"
             class="blog-link">
@@ -52,7 +70,6 @@
                 <span class="blog-tag", href="tag/{{ tag }}">{{ tag }}</span>
                 {% endfor %}
                 </div>
-                {{ article.summary }}
             </div>
         </a>
         {% endfor %}

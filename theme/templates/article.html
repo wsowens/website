@@ -30,7 +30,7 @@
                     <a href="/life">Life</a>
                 </div>
                 <div class="nav-button">
-                    <a href="/etc">Et cetera</a>
+                    <a href="/etc/" class="current">Et cetera</a>
                 </div>
             </div>
             <div class="home-button">
@@ -41,7 +41,12 @@
     <div class="wrapper">
         <div class="blog-heading">
             <h1>{{ article.title }}</h1>
-            <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+            <div class="blog-entry-metadata">
+            <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
+            {% for tag in article.tags %}
+            <a class="blog-tag", href="tag/{{ tag }}">{{ tag }}</a>
+            {% endfor %}
+            </div>
         </div>
         <div class="content">
             {{ article.content }}

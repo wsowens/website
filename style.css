@@ -180,6 +180,20 @@ div.blog-entry p {
     font-size: 1.2em;
 }
 
+
+div.tag-entry {
+    margin: 0 5%;
+    border-left: solid #93a1a1 2px;
+}
+
+div.tag-entry:hover {
+    border-left: solid #2aa198 5px;
+}
+
+div.tag-entry h3 {
+    color: #000000;
+}
+
 /* tables */
 table {
     font-family: "Lato", "sans-serif";
@@ -189,6 +203,34 @@ table {
     display: block;
     overflow-x: auto;
     white-space: nowrap;
+}
+
+a.not-current {
+    color: #93a1a1;
+    text-decoration: none;
+
+}
+
+a.current {
+    color: #268bd2;
+    text-decoration: underline;
+
+}
+
+.blog-tag {
+    color: white;
+    background-color: #2aa198;
+    padding: 0.125em 0.25em;
+    border-radius: 8px;
+}
+
+.tag-highlight {
+    color: #2aa198;
+}
+
+div.blog-entry-metadata {
+    font-size: 1rem;
+    line-height: 1.75em;
 }
 
 

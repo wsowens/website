@@ -22,7 +22,7 @@
                     <a href="/life">Life</a>
                 </div>
                 <div class="nav-button">
-                    <a class="current">Et cetera</a>
+                    <a href="/etc/" class="current">Et cetera</a>
                 </div>
             </div>
             <div class="home-button">
@@ -37,23 +37,15 @@
             <span style="font-family: 'EB Garamond', serif; font-weight: 400; font-style: italic">(An archive of my 
                 <a href="/etc/tag/essay" class="not-current">essays</a>,
                 <a href="/etc/tag/story" class="not-current">stories</a>, and 
-                <a href="/etc/tags" class="not-current">other writing</a>.)
+                <a href="/etc/tags" class="current">other writing</a>.)
             </span>
         </h2>
-        <h3>Most recent posts:</h3>
-        {% for article in articles_page.object_list %}
-        <a href="/etc/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}"
-            class="blog-link">
-            <div class="blog-entry">
-                <h2>{{ article.title }}</h2>
-                <div class="blog-entry-metadata">
-                <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }}</time>
-                {% for tag in article.tags %}
-                <span class="blog-tag", href="tag/{{ tag }}">{{ tag }}</span>
-                {% endfor %}
-                </div>
-                {{ article.summary }}
-            </div>
+        <h3> Browsing 42 posts across {{ tags|length }} tags:</span></h3>
+        {% for tag, articles in tags %}
+        <a href="/etc/tag/{{ tag }}" rel="bookmark" title="Permalink to {{ tag }}">
+            <div class="tag-entry">
+                <h3><span class="tag-highlight">{{ tag }}</span> <span>({{ articles|length }})</span></h3>
+            </div> 
         </a>
         {% endfor %}
     </div>

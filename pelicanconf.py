@@ -9,9 +9,10 @@ SITEURL = 'https://ovvens.com/etc'
 
 PATH = 'content'
 
-TIMEZONE = 'America/Los_Angeles'
+TIMEZONE = 'America/New_York'
 
 DEFAULT_LANG = 'en'
+DEFAULT_DATE_FORMAT='%b %d, %Y'
 
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
@@ -34,7 +35,7 @@ DEFAULT_PAGINATION = False
 
 # disable creating pages for category and author
 AUTHOR_SAVE_AS = ''
-CATEGORY_SAVE_AS = ''
+#CATEGORY_SAVE_AS = ''
 
 SUMMARY_MAX_LENGTH = 10
 SUMMARY_END_SUFFIX = "... (Read more)"
